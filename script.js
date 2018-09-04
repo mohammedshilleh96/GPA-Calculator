@@ -27,11 +27,12 @@ $(document).ready(function() {
     // Calculate course points
     if (grade != "") {
       coursePoints = calculatePoints(parseInt(grade));
-    }
+    
 
     // Update global variables;
     totalCreditHours += parseInt(credit);
     totalPoints += parseInt(credit) * coursePoints;
+    }
   });
 
   // Calculate final GPA
