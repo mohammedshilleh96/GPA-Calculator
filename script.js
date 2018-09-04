@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 
   // Calculate final GPA
-  gpa = totalPoints / totalCreditHours;
+  gpa = (totalPoints / totalCreditHours).toFixed(2);
 
   // Print result to user
   alert("Hours: " + totalCreditHours + "\n" + "GPA: " + gpa);
