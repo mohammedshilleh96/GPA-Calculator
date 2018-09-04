@@ -9,7 +9,7 @@ var gpa;
 
 $(document).ready(function() {
   // Select all the finished courses
-  grades = $(".RTN");
+  grades = $(".RTN").not(".disabled");
 
   // Loop over each course to calculate its points and update the global variables
   grades.each(function() {
@@ -27,11 +27,10 @@ $(document).ready(function() {
     // Calculate course points
     if (grade != "") {
       coursePoints = calculatePoints(parseInt(grade));
-    
 
-    // Update global variables;
-    totalCreditHours += parseInt(credit);
-    totalPoints += parseInt(credit) * coursePoints;
+      // Update global variables;
+      totalCreditHours += parseInt(credit);
+      totalPoints += parseInt(credit) * coursePoints;
     }
   });
 
@@ -40,9 +39,10 @@ $(document).ready(function() {
 
   // Print result to user
   alert("Hours: " + totalCreditHours + "\n" + "GPA: " + gpa);
+  console.log(grades.length);
 });
 
-// This function takes the course grade as input and returns the gpa points 
+// This function takes the course grade as input and returns the gpa points
 function calculatePoints(grade) {
   if (grade >= 97) {
     return 4.0;
